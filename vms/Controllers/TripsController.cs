@@ -17,6 +17,9 @@ namespace vms.Controllers
         // GET: Trips
         public ActionResult Index()
         {
+            TempData["TotalIncome"] = Trip.TotalIncome();
+            TempData["FuelCost"] = Trip.FuelExpense();
+            TempData["OtherExpenses"] = Trip.OtherExpense();
             return View(db.Trips.ToList());
         }
 
