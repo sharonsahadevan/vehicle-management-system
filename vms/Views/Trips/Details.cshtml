@@ -1,0 +1,66 @@
+﻿@model vms.Models.Trip
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trip</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TripDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TripDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TripFare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TripFare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FuelCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FuelCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherExpenses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherExpenses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TripID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<vms.Models.Trip>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TripDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TripFare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuelCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherExpenses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TripDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TripFare)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuelCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherExpenses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TripID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TripID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TripID })
+        </td>
+    </tr>
+}
+
+</table>
