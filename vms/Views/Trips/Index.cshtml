@@ -4,11 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Trips</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -28,6 +26,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetIncome)
         </th>
         <th></th>
     </tr>
@@ -53,11 +54,51 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TripID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TripID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TripID })
+            @Html.DisplayFor(modelItem => item.NetIncome)
+        </td>
+        <td>
+
+            @Html.ActionLink("Update", "Edit", "Trips", new { id = item.TripID }, new { @class = "btn btn-primary btn-sm" })
+            @Html.ActionLink("Details", "Details", "Trips", new { id = item.TripID }, new { @class = "btn btn-success btn-sm" })
+            @Html.ActionLink("Delete", "Delete", "Trips", new { id = item.TripID }, new { @class = "btn btn-danger btn-sm" })
         </td>
     </tr>
 }
 
 </table>
+
+</hr>
+
+<div class="table">
+
+    <table class="table">
+            
+        <tr>
+            <th>
+                Total Income
+            </th>
+            <th>
+               Fuel Cost
+            </th>
+            <th>
+                Other Expense
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                @TempData["TotalIncome"]
+            </td>
+
+            <td>
+                @TempData["FuelCost"]
+            </td>
+
+            <td>
+                @TempData["OtherExpenses"]
+            </td>
+
+        </tr>
+
+</table>
+</div>

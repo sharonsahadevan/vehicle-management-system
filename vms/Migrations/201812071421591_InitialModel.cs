@@ -40,7 +40,8 @@ namespace vms.Migrations
                         TripFare = c.Decimal(nullable: false, precision: 18, scale: 2),
                         FuelCost = c.Decimal(nullable: false, precision: 18, scale: 2),
                         OtherExpenses = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Description = c.String(nullable: false),
+                        Description = c.String(),
+                        NetIncome = c.Decimal(nullable: true, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.TripID);
             

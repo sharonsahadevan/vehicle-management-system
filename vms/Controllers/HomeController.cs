@@ -11,6 +11,7 @@ namespace vms.Controllers
         public ActionResult Index()
         {
             return View();
+           
         }
 
         public ActionResult About()

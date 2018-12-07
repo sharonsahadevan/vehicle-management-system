@@ -1,0 +1,58 @@
+﻿@model vms.Models.Trip
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Reports</h1>
+
+<div class="form-horizontal">
+    @using (Html.BeginForm("GetReportByDate", "Reports", FormMethod.Post))
+    {
+        <div class="form-group">
+
+            <label class="control-label col-md-2" for="From Date">From Date</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TripDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TripDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="To Date">To Date</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TripDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TripDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-success" />
+            </div>
+        </div>
+    }
+</div>
+
+
+</hr>
+<div class="form-horizontal">
+    @using (Html.BeginForm("GetReportByDestination", "Reports", FormMethod.Post))
+    {
+        <div class="form-group">
+
+            <label class="control-label col-md-2" for="From Date">Destination</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Destination, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Destination, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+   
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-success" />
+            </div>
+        </div>
+    }
+</div>

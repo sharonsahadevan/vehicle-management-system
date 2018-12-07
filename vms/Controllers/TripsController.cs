@@ -50,10 +50,21 @@ namespace vms.Controllers
         {
             if (ModelState.IsValid)
             {
+                var tripFare = trip.TripFare;
+                var fuelCost = trip.FuelCost;
+                var otherExpenses = trip.OtherExpenses;
+                trip.NetIncome = Trip.CalculateNetIncome(tripFare, fuelCost, otherExpenses);
+
+               
+
                 db.Trips.Add(trip);
                 db.SaveChanges();
-                //return RedirectToAction("Index");
-                return View();
+
+                TempData["TotalIncome"] = Trip.TotalIncome();
+                TempData["FuelCost"] = Trip.FuelExpense();
+                TempData["OtherExpenses"] = Trip.OtherExpense();
+                return RedirectToAction("Index");
+                
             }
 
             return View(trip);
